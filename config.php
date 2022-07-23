@@ -1,6 +1,6 @@
 <?php
-$svr="localhost";
-$usr="root";
-$pwd="";
-$db="carinventory";
+$svr="";  //Server name
+$usr="";  //user name
+$pwd="";  //passwrod
+$db="";   //database name
 ?>
