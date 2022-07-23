@@ -1,0 +1,11 @@
+p {
+	width:  30%;
+	margin: 100px auto;
+	padding: 15px 0px;
+	text-align: center;
+	font-family: 'Nunito', sans-serif;
+	font-size: 50px;
+	border: solid 1px #ccc;
+	border-radius: 25px;
+	background-color: #68bb59;
+}

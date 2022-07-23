@@ -1,0 +1,64 @@
+.about-section {
+	padding: 10px; 
+	color: #333333;
+	display: inline-block;
+}
+
+.col h1{
+	font-size: 15px;
+	display: inline-block; 
+	margin: auto;
+	text-align: center;
+	width: 100%;
+}
+
+.col {
+	float: left;
+	display: inline-block;
+	width: 49%;
+	color: #333333;
+	text-align: justify;
+}
+
+.col:hover {
+	color: #000000;
+}
+
+.col:hover h1 {
+	color: #000000;
+	border-bottom: solid #68bb59 3px;
+}
+
+.col p {
+	padding: 0px 50px;
+}
+
+section {
+	width: 90%;
+	margin: 100px auto;
+}
+
+section p {
+	margin: auto;
+}
+
+.bottom p {
+	margin: auto;
+	width: 100px;
+	text-align: center;
+	font-size: 15px;
+}
+
+.bottom p:hover {
+	border-bottom: solid #68bb59 3px;
+}
+
+.bottom div {
+	width: 75%;
+	margin: 25px auto;
+}
+
+.bottom div img {
+	width: 100%;
+}
+

@@ -1,0 +1,76 @@
+CREATE TABLE `billing_details` (
+  `b_id` varchar(10) NOT NULL,
+  `b_mode` varchar(25) NOT NULL,
+  `b_status` varchar(4) NOT NULL,
+  `c_id` varchar(10) NOT NULL,
+  `e_id` varchar(10) NOT NULL,
+  `chassis_number` varchar(17) NOT NULL,
+  PRIMARY KEY (`b_id`),
+  KEY `bd_fk_1` (`c_id`),
+  KEY `bd_fk_2` (`e_id`),
+  KEY `bd_fk_3` (`chassis_number`)
+)
+
+CREATE TABLE `car_details` (
+  `chassis_number` varchar(17) NOT NULL,
+  `color` varchar(10) NOT NULL,
+  `m_id` varchar(10) NOT NULL,
+  PRIMARY KEY (`chassis_number`),
+  KEY `cd_fk` (`m_id`)
+)
+
+CREATE TABLE `customer_details` (
+  `c_id` int(5) NOT NULL AUTO_INCREMENT,
+  `c_name` varchar(25) DEFAULT NULL,
+  `c_PhNo` double DEFAULT NULL,
+  `c_age` int(3) NOT NULL,
+  `c_pincode` int(6) DEFAULT NULL,
+  `c_doorNo` varchar(25) DEFAULT NULL,
+  `c_areaName` varchar(25) DEFAULT NULL,
+  `c_city` varchar(25) DEFAULT NULL,
+  `c_state` varchar(25) DEFAULT NULL,
+  PRIMARY KEY (`c_id`)
+)
+
+CREATE TABLE `employee_details` (
+  `e_id` varchar(10) NOT NULL,
+  `e_name` varchar(25) DEFAULT NULL,
+  `e_PhNo` double NOT NULL,
+  `e_age` int(3) NOT NULL,
+  `e_pincode` int(6) DEFAULT NULL,
+  `e_doorNo` varchar(10) NOT NULL,
+  `e_areaname` varchar(25) DEFAULT NULL,
+  `e_city` varchar(25) DEFAULT NULL,
+  `e_state` varchar(25) DEFAULT NULL,
+  `e_salary` varchar(10) NOT NULL,
+  `e_userName` varchar(25) DEFAULT NULL,
+  `e_password` varchar(25) DEFAULT NULL,
+  `e_email` varchar(50) DEFAULT NULL,
+  `e_dept` varchar(25) DEFAULT NULL,
+  PRIMARY KEY (`e_id`)
+)
+
+CREATE TABLE `model_specifications` (
+  `m_id` varchar(10) NOT NULL,
+  `m_name` varchar(25) NOT NULL,
+  `m_variant` varchar(25) NOT NULL,
+  `m_fuel_type` varchar(10) NOT NULL,
+  `m_cc` int(6) NOT NULL,
+  `m_torque` int(3) NOT NULL,
+  `m_power` int(3) NOT NULL,
+  `m_release_date` varchar(8) NOT NULL,
+  PRIMARY KEY (`m_id`)
+)
+
+CREATE TABLE `testing_details` (
+  `t_id` varchar(10) NOT NULL,
+  `performance_test` varchar(4) NOT NULL,
+  `NVH_test` varchar(4) NOT NULL,
+  `mileage_test` varchar(4) NOT NULL,
+  `dyno_test` varchar(4) NOT NULL,
+  `safety_test` varchar(4) NOT NULL,
+  `quality_test` varchar(4) NOT NULL,
+  `final_test` varchar(4) NOT NULL,
+  `chassis_number` varchar(10) NOT NULL,
+  KEY `td_fk_2` (`chassis_number`)
+)

@@ -1,0 +1,19 @@
+table {
+	margin: 50px auto;
+	border: solid 3px #000000;
+	padding: 10px 50px;
+	background: #eeeeee;
+	border-radius: 25px;
+	width: 500px;
+}
+
+td {
+	width: 49%;
+  	display: inline-block;
+  	margin: 10px 0;
+  	text-align: justify;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+}

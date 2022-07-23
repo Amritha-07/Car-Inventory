@@ -1,0 +1,119 @@
+create table model_specifications
+(
+m_id varchar(10) primary key not null, 
+m_name varchar(25) not null, 
+m_variant varchar(25) not null, 
+m_fuel_type varchar(10) not null, 
+m_cc int(6) not null, 
+m_torque int(3) not null, 
+m_power int(3) not null
+);
+
+create table car_details
+(
+chassis_number varchar(17) primary key not null, 
+color varchar(10) not null, 
+m_id varchar(10) not null, 
+constraint cd_fk foreign key(m_id) references model_specifications(m_id)
+);
+
+create table testing_details
+(
+t_id varchar(10), 
+performance_test varchar(4), 
+NVH_test varchar(4), 
+miliege_test varchar(4), 
+dyno_test varchar(4), 
+safety_test varchar(4), 
+quality_test varchar(4), 
+final_test varchar(4), 
+m_id varchar(10), 
+chassis_number varchar(10), 
+constraint td_fk_1 foreign key(m_id) references model_specifications(m_id), 
+constraint td_fk_2 foreign key (chassis_number) references car_details(chassis_number)
+);
+
+create table employee_details
+(
+e_name char(10) primary key,
+e_PhNo int(10) not null,
+e_age int(10) not null,
+e_pincode varchar(10) not null,
+e_doorNo varchar(10) not null,
+e_areaName varchar(10) not null,
+e_city varchar(10) not null,
+e_state varchar(10) not null,
+e_salary varchar(10) not null
+);
+
+create table employee_login
+(
+e_login_id varchar(10) primary key,
+e_username varchar(10) not null,
+e_password varchar(10) not null,
+e_dept varchar(10) not null,
+e_email varchar(10) not null,
+e_id varchar(10) not null,
+constraint el_fk foreign key (e_id) references employee_details(e_id)
+);
+
+create table customer_details 
+( 
+c_name char(10) primary key, 
+c_PhNo int(10) not null, 
+c_age int(10) not null, 
+c_pincode varchar(10) not null, 
+c_doorNo varchar(10) not null, 
+c_areaName varchar(10) not null, 
+c_city varchar(10) not null, 
+c_state varchar(10) not null 
+);
+
+
+create table billing_details
+(
+b_id varchar(10) primary key,
+b_mode varchar(25) not null,
+b_status varchar(4) not null,
+c_id varchar(10) not null,
+e_id varchar(10) not null,
+chassis_number varchar(17) not null,
+constraint bd_fk_1 foreign key (c_id) references customer_details(c_id),
+constraint bd_fk_2 foreign key(e_id) references employee_details(e_id),
+constraint bd_fk_3 foreign key(chassis_number) references car_details(chassis_number)
+);
+
+insert into model_specifications values('BIF123','RAPID','AMBITION','PETROL',999,200,108);
+
+mysql> insert into model_specifications values('BIF124','SLAVIA','ACTIVE','PETROL',1500,250,142);
+
+mysql> insert into model_specifications values('BIF125','POLO','ACTIVE','PETROL',1000,300,134);
+
+mysql> insert into model_specifications values('BIF126','ALTROZ','XZXZ','DIESEL',1300,700,170);
+
+mysql> insert into model_specifications values('BIF007','VIRTUS','HIGHLINE','DIESEL',1500,130,88);
+
+INSERT INTO car_details (chassis_number,color,m_id) VALUES ('1234sk07','red','BIF123');
+INSERT INTO car_details (chassis_number,color,m_id) VALUES ('1234sk08','blue','BIF124');
+INSERT INTO car_details (chassis_number,color,m_id) VALUES ('1234sk09','black','BIF125');
+INSERT INTO car_details (chassis_number,color,m_id) VALUES ('1234sk10','silver','BIF125');
+INSERT INTO car_details (chassis_number,color,m_id) VALUES ('1234sk11','blue','BIF124');
+INSERT INTO car_details (chassis_number,color,m_id) VALUES ('1234sk12','red','BIF123');
+
+select * from model_specifications where m_id = (select m_id from car_details where chassis_number = '1234sk07');
+
+INSERT INTO testing_details (t_id,performance_test,NVH_test,mileage_test,dyno_test,safety_test,quality_test,final_test,m_id,chassis_number) VALUES ('1234ttsk01','pass','pass','pass','pass','pass','pass','pass','BIF124','1234sk08);
+INSERT INTO testing_details (t_id,performance_test,NVH_test,mileage_test,dyno_test,safety_test,quality_test,final_test,m_id,chassis_number) VALUES ('1234ttsk02','pass','pass','pass','pass','pass','pass','pass','BIF124','1234sk11);
+INSERT INTO testing_details (t_id,performance_test,NVH_test,mileage_test,dyno_test,safety_test,quality_test,final_test,m_id,chassis_number) VALUES ('1234ttsk03','pass','pass','pass','pass','pass','pass','pass','BIF123','1234sk12);
+INSERT INTO testing_details (t_id,performance_test,NVH_test,mileage_test,dyno_test,safety_test,quality_test,final_test,m_id,chassis_number) VALUES ('1234ttsk04','pass','pass','fail','pass','pass','pass','pass','BIF123','1234sk07);
+
+
+INSERT INTO billing_details (b_id,b_mode,b_status,c_id,e_id,chassis_number) VALUES ('1234blsk01','online','pass','1','E001','1234sk11');
+INSERT INTO billing_details (b_id,b_mode,b_status,c_id,e_id,chassis_number) VALUES ('1234blsk01','online','pass','1','E001','1234sk11');
+INSERT INTO billing_details (b_id,b_mode,b_status,c_id,e_id,chassis_number) VALUES ('1234blsk02','online','fail','2','E002','1234sk10');
+
+
+
+
+
+
