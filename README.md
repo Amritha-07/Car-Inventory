@@ -1,4 +1,4 @@
-# car-inventory
+# Car-Inventory
 
 MYSQL instructions
 
