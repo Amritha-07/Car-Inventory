@@ -8,9 +8,9 @@ Both employee and customer can register and login
 
 ## Instructions
 
-*create separate database for this project (database_name)
+- create separate database for this project (database_name)
 
-*inside database run those commands given in create.txt in commands folder
+- inside database run those commands given in create.txt in commands folder
 
 ## Tech-Stack
 
