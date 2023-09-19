@@ -6,7 +6,7 @@ This project involve a front-end platform for car inventory
 
 Both employee and customer can register and login
 
-## MYSQL instructions
+## Instructions
 
 *create separate database for this project (database_name)
 
