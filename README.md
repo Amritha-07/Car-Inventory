@@ -18,7 +18,8 @@ This project is a web-based application that allows employees and customers to m
 ## Features
 
 - Employees can register, login, add, update, delete, and search cars in the inventory.
-- Customers can register, login, view, filter, and sort cars in the inventory.
+- Employees can also bill the cars purchased by the customers
+- Customers can register, login and view cars in the inventory.
 - The application displays the details of each car, such as model, year,
 
 ## Instructions and Usage
@@ -38,12 +39,3 @@ To install and run this project, you need to have the following requirements:
 To download the code files for this project, you can clone this GitHub repository using the following command:
 
 ```git clone https://github.com/Amritha-07/Car-Inventory.git```
-
-## References
-
-This project was inspired by and based on the following sources:
-
-- [PHP Tutorial](https://www.w3schools.com/php/) from W3Schools
-- [HTML Tutorial](https://www.w3schools.com/html/) from W3Schools
-- [CSS Tutorial](https://www.w3schools.com/css/) from W3Schools
-- [MySQL Tutorial](https://www.w3schools.com/MySQL/default.asp) from W3Schools
